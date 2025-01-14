@@ -6,9 +6,9 @@ import TodoItem from "@/components/TodoItem.vue";
 
 const newTodoTitle = ref('')
 const newTodoDesc = ref('')
-const name = ref(JSON.parse(localStorage.getItem('name') || ''))
+const name = ref(localStorage.getItem('name') ? JSON.parse(localStorage.getItem('name')) : '')
 const newName = ref('')
-const todos = ref(JSON.parse(localStorage.getItem('todos') || '[]'))
+const todos = ref(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [])
 
 const addTodo = () => {
   if ((newTodoTitle.value.trim()) && (newTodoDesc.value.trim())) {
