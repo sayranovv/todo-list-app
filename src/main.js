@@ -3,11 +3,18 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { MdClose } from "oh-vue-icons/icons";
+import { router } from './router.js'
+import { createPinia } from 'pinia'
 
-addIcons(MdClose);
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
+import { MdClose, MdLogout } from 'oh-vue-icons/icons'
 
-const app = createApp(App);
-app.component("v-icon", OhVueIcon);
-app.mount("#app");
+addIcons(MdClose, MdLogout)
+
+const pinia = createPinia()
+
+const app = createApp(App)
+app.use(router)
+app.use(pinia)
+app.component('v-icon', OhVueIcon)
+app.mount('#app')
