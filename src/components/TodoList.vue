@@ -11,7 +11,7 @@ const newName = ref('')
 const todos = ref(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [])
 
 const addTodo = () => {
-  if ((newTodoTitle.value.trim()) && (newTodoDesc.value.trim())) {
+  if (newTodoTitle.value.trim()) {
     todos.value.push({
       id: Date.now(),
       title: newTodoTitle.value,
@@ -61,7 +61,7 @@ const saveName = () => {
             class="p-1 h-6 w-24 inline"
         />!
       </p>
-      <h1 class="text-6xl font-black">Todo List</h1>
+      <h1 class="text-6xl font-black mt-1">Todo List</h1>
     </div>
     <div class="text-2xl flex flex-col gap-5">
       <div class="flex flex-col gap-2">
