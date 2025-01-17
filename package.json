@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
+    "@vee-validate/zod": "^4.15.0",
     "@vueuse/core": "^12.4.0",
     "appwrite": "^16.1.0",
     "class-variance-authority": "^0.7.1",
@@ -20,8 +22,10 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.0.5",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
