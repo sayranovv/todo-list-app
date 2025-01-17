@@ -1,14 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import TodoItem from '@/components/TodoItem.vue'
-import { useRouter } from 'vue-router'
-import { account, databases } from '@/appwrite.js'
+import { vAutoAnimate } from '@formkit/auto-animate/vue'
 import { useAuthStore } from '@/store/auth.store.js'
+import { account, databases } from '@/appwrite.js'
+import TodoItem from '@/components/TodoItem.vue'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import Loader from '@/components/Loader.vue'
+import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
 import { v4 as uuid } from 'uuid'
 import { Query } from 'appwrite'
-import Loader from '@/components/Loader.vue'
 
 const router = useRouter()
 const store = useAuthStore()
@@ -107,6 +108,7 @@ onMounted(() => {
 
 <template>
   <main
+    v-auto-animate
     class="max-w-md mx-auto mt-10 mb-10 px-4 flex flex-col rounded-3xl gap-7 max-[450px]:mt-4 bg-white min-[451px]:border-2 min-[451px]:border-black min-[451px]:p-7 min-[451px]:drop-shadow-2xl"
   >
     <div v-if="isLoading">
@@ -143,6 +145,7 @@ onMounted(() => {
       </p>
       <ul v-else class="flex flex-col gap-5 mt-4">
         <TodoItem
+          v-auto-animate
           v-for="todo in todos"
           :key="todo.id"
           :todo="todo"
