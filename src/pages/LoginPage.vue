@@ -1,7 +1,7 @@
 <script setup>
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { vAutoAnimate } from '@formkit/auto-animate/vue'
-import loginForm from '@/components/loginForm.vue'
+import LoginForm from '@/components/LoginForm.vue'
 import RegistrationForm from '@/components/RegistrationForm.vue'
 </script>
 
@@ -20,7 +20,7 @@ import RegistrationForm from '@/components/RegistrationForm.vue'
           <TabsTrigger value="Sign In" class="w-1/2 rounded-full"> Sign In </TabsTrigger>
         </TabsList>
         <TabsContent value="Log In" class="mt-4 drop-shadow-lg" v-auto-animate>
-          <loginForm />
+          <LoginForm />
         </TabsContent>
         <TabsContent value="Sign In" class="mt-4 drop-shadow-lg" v-auto-animate>
           <RegistrationForm />
